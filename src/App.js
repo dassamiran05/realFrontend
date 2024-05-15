@@ -56,8 +56,22 @@ function App() {
           }
         />
         <Route path="/singleplace/:id" element={<Singleplace />} />
-        <Route path="/account/bookings" element={<BookingsPage />} />
-        <Route path="/account/bookings/:id" element={<BookingPage />} />
+        <Route
+          path="/account/bookings"
+          element={
+            <Protected>
+              <BookingsPage />
+            </Protected>
+          }
+        />
+        <Route
+          path="/account/bookings/:id"
+          element={
+            <Protected>
+              <BookingPage />
+            </Protected>
+          }
+        />
       </Route>
     </Routes>
   );
